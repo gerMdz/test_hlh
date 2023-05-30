@@ -1,4 +1,17 @@
 ### Curso TDD en Laravel
 
+#### Visto
+
+Los métodos de test deben iniciar con la palabra 
+> test_resto_del_method
+
+Otra forma es agregando
+```
+/**
+* @test
+*/
+```
+
+
 #### Next
-(Cap 3)[https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/diferencia-entre-pruebas-feeture-y-unit]
+(Cap 5)[https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/pasar-a-verde-el-test-unit]
