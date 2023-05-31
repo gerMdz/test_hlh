@@ -14,4 +14,4 @@ Otra forma es agregando
 
 
 #### Next
-(Cap 5)[https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/pasar-a-verde-el-test-unit]
+[Cap 6](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/crear-un-test-feeture)
