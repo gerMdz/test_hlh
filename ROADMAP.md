@@ -12,6 +12,11 @@ Otra forma es agregando
 */
 ```
 
+Carpeta donde se crean los test
+```bash
+php artisan make:test TareasTest 
+php artisan make:test HelpersTest --unit 
+```
 
 #### Next
-[Cap 6](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/crear-un-test-feeture)
+[Cap 8](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/pasar-a-verde-el-test-feeture-ii)
