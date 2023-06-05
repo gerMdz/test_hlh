@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Tarea;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -25,7 +26,7 @@ class TareaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tarea::create($request->all());
     }
 
     /**
