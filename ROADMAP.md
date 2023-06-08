@@ -17,6 +17,11 @@ Carpeta donde se crean los test
 php artisan make:test TareasTest 
 php artisan make:test HelpersTest --unit 
 ```
+Compara la estructura de una respuesta Json
+```php
+$response->assertJsonStructure
+```
+
 
 #### Next
-[Cap 10](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/hacer-peticiones-con-postman)
+[Cap 11](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/prueba-subir-imagenes)
