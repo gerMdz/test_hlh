@@ -13,6 +13,7 @@ class Tarea extends Model
     public $fillable = [
         'nombre',
         'descripcion',
-        'status'
+        'status',
+        'image'
     ];
 }

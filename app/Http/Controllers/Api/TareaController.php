@@ -6,6 +6,7 @@ use App\Models\Tarea;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class TareaController extends Controller
 {
@@ -28,13 +29,14 @@ class TareaController extends Controller
     public function store(Request $request): JsonResponse
     {
 
-        $request->validate([
+       $data =  $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
             'status' => 'required'
         ]);
+       $data['image'] = Storage::put('public/tareas', $request->file('image'));
 
-        $tarea = Tarea::create($request->all());
+        $tarea = Tarea::create($data);
 
         return response()->json($tarea);
     }

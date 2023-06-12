@@ -18,6 +18,7 @@ class CreateTareasTable extends Migration
             $table->string('nombre');
             $table->text('descripcion');
             $table->string('status');
+            $table->string('image');
             $table->timestamps();
         });
     }

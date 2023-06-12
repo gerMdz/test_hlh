@@ -17,6 +17,18 @@ Carpeta donde se crean los test
 php artisan make:test TareasTest 
 php artisan make:test HelpersTest --unit 
 ```
+
+Crea carpeta que enlace el storage con public
+```bash
+php artisan storage:link 
+```
+
+Cambiar el .env
+```env
+-- FILESYSTEM_DRIVER=local
+++ FILESYSTEM_DRIVER=public
+```
+
 Compara la estructura de una respuesta Json
 ```php
 $response->assertJsonStructure
@@ -24,4 +36,5 @@ $response->assertJsonStructure
 
 
 #### Next
-[Cap 11](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/prueba-subir-imagenes)
+[Cap 15](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/instalar-laravel-breeze)
+
