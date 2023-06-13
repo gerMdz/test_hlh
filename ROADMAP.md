@@ -34,7 +34,13 @@ Compara la estructura de una respuesta Json
 $response->assertJsonStructure
 ```
 
+Para filtrar los test a ejecutar 
+```php
+php artisan test --filter=EjecutarSoloUnTest.php
+```
+
 
 #### Next
-[Cap 15](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/instalar-laravel-breeze)
+[Cap 18](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/instalar-jwt)
+
 
