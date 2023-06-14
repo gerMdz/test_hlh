@@ -39,8 +39,23 @@ Para filtrar los test a ejecutar
 php artisan test --filter=EjecutarSoloUnTest.php
 ```
 
+Instalar el paquete jwt
+```php
+composer require tymon/jwt-ath
+```
+
+Para publicar la configuración del jwt 
+```php
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+```
+
+Para generar el secret jwt 
+```php
+php artisan jwt:secret
+```
+
 
 #### Next
-[Cap 18](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/instalar-jwt)
-
+[Cap 19](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/prueba-login)
+1
 

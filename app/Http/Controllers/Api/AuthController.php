@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
+
 
 class AuthController extends Controller
 {
@@ -22,9 +24,11 @@ class AuthController extends Controller
             'password' => bcrypt($data['password'])
         ]);
 
+        $token = JWTAuth::fromUser($user);
+
         return response()->json([
             'user'=> $user,
-            'token' => 'asfpoifghuyt'
+            'token' => $token
         ]);
     }
 }
