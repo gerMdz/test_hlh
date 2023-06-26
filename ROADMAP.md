@@ -56,6 +56,6 @@ php artisan jwt:secret
 
 
 #### Next
-[Cap 21](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/como-funciona-la-autenticacion-por-token)
+[Cap 22](https://codersfree.com/courses-status/introduccion-a-las-pruebas-automatizadas-con-laravel-tdd/obtener-la-informacion-del-usuario-autenticado)
 
 
