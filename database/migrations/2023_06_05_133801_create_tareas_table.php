@@ -19,6 +19,7 @@ class CreateTareasTable extends Migration
             $table->text('descripcion');
             $table->string('status');
             $table->string('image');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class TareaController extends Controller
 {
@@ -28,6 +29,7 @@ class TareaController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
+        $user =  JWTAuth::parseToken()->authenticate();
 
        $data =  $request->validate([
             'nombre' => 'required',
@@ -35,6 +37,7 @@ class TareaController extends Controller
             'status' => 'required'
         ]);
        $data['image'] = Storage::put('public/tareas', $request->file('image'));
+       $data['user_id'] = $user->id;
 
         $tarea = Tarea::create($data);
 

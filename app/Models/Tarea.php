@@ -14,6 +14,7 @@ class Tarea extends Model
         'nombre',
         'descripcion',
         'status',
-        'image'
+        'image',
+        'user_id'
     ];
 }
