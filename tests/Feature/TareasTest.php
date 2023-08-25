@@ -34,7 +34,7 @@ class TareasTest extends TestCase
             'status' => 'pendiente',
             'image' => $imagen
         ], [
-            'Authorization' => 'Bearer ' .$userToken
+            'Authorization' => 'Bearer ' . $userToken
         ]);
 
         $response->assertStatus(200);
@@ -78,4 +78,25 @@ class TareasTest extends TestCase
 //        ]);
 
 //    }
+
+    public function test_tarea_no_creada_no_auth()
+    {
+        Storage::fake();
+
+        $imagen = UploadedFile::fake()->image('avatar.png');
+
+        $response = $this->postJson(route('tarea.store'), [
+            'nombre' => 'Prueba 1',
+            'descripcion' => 'Descripción Prueba 1',
+            'status' => 'pendiente',
+            'image' => $imagen
+        ]);
+
+        $response->assertStatus(401);
+
+        $response->assertJson([
+            'message' => 'Unauthenticated.'
+
+        ]);
+    }
 }
