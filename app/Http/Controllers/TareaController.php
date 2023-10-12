@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTareaRequest;
 use App\Http\Requests\UpdateTareaRequest;
 use App\Models\Tarea;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class TareaController extends Controller
 {
@@ -31,12 +36,23 @@ class TareaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTareaRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function store(StoreTareaRequest $request)
+    public function store(Request $request)
     {
-        //
+
+        $data =  $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'status' => 'required'
+        ]);
+        $data['image'] = Storage::put('tareas', $request->file('image'));
+        $data['user_id'] = auth()->user()->id;
+
+        Tarea::create($data);
+
+        return redirect()->route('tarea.index');
     }
 
     /**

@@ -26,4 +26,7 @@ Route::get('/prueba', function () {
 
    return JWTAuth::parseToken()->authenticate();
 });
+
+Route::resource('tarea', \App\Http\Controllers\TareaController::class)->middleware('auth');
+
 require __DIR__.'/auth.php';

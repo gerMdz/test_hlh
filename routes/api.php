@@ -23,5 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
-Route::apiResource('tarea', TareaController::class)->middleware('auth:api');
+Route::apiResource('tarea', TareaController::class)->names('api.tarea')->middleware('auth:api');
 

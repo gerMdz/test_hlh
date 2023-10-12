@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
-class TareasTest extends TestCase
+class TareasApiTest extends TestCase
 {
 
     use RefreshDatabase;
@@ -19,7 +19,7 @@ class TareasTest extends TestCase
      *
      * @return void
      */
-    public function test_tarea_creada_success()
+    public function test_tarea_creada_success_por_api()
     {
         Storage::fake();
 
@@ -28,7 +28,7 @@ class TareasTest extends TestCase
         $userToken = JWTAuth::fromUser($user);
 
         $imagen = UploadedFile::fake()->image('avatar.png');
-        $response = $this->postJson(route('tarea.store'), [
+        $response = $this->postJson(route('api.tarea.store'), [
             'nombre' => 'Prueba 1',
             'descripcion' => 'Descripción Prueba 1',
             'status' => 'pendiente',
@@ -85,7 +85,7 @@ class TareasTest extends TestCase
 
         $imagen = UploadedFile::fake()->image('avatar.png');
 
-        $response = $this->postJson(route('tarea.store'), [
+        $response = $this->postJson(route('api.tarea.store'), [
             'nombre' => 'Prueba 1',
             'descripcion' => 'Descripción Prueba 1',
             'status' => 'pendiente',
