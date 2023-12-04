@@ -39,4 +39,21 @@ class TareaWebTest extends TestCase
 
 
     }
+
+    public function test_tarea_no_creada_no_auth_por_web()
+    {
+        Storage::fake();
+
+        $imagen = UploadedFile::fake()->image('avatar.png');
+
+        $response = $this->post(route('tarea.store'), [
+            'nombre' => 'Prueba 1 web',
+            'descripcion' => 'Descripción Prueba 1 web',
+            'status' => 'pendiente',
+            'image' => $imagen
+        ]);
+
+
+        $response->assertRedirect(route('login'));
+    }
 }
